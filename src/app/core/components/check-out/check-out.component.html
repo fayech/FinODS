@@ -68,7 +68,7 @@
                                     <tbody>
                                         <tr *ngFor="let item of codebar;  let i = index">
                                             <th scope="row">{{ i + 1 }}</th>
-                                            <td><img src="http://localhost:3000/{{item.image}}"  alt="Third slide">{{ item.nom }}</td>
+                                            <td><img src="http://35.225.20.174:3000/{{item.image}}"  alt="Third slide">{{ item.nom }}</td>
                                             <td>
                                                 <div class="product_count">
                                                     <input type="number" name="qty" (input)="onChange($event.target.value, item.price,i)" id="sst"min="1" max="10" maxlength="12" value="1" title="Quantity:" class="input-text qty">

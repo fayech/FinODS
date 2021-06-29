@@ -89,7 +89,7 @@ export class GraphVisaulizerComponent implements OnInit {
 
   ) {
     this.somme = localStorage.getItem("total");
-    this.httpClient.get("http://localhost:3000/getposition")
+    this.httpClient.get("http://35.225.20.174:3000/getposition")
     .subscribe(data =>{
       
       console.log(data);
@@ -458,7 +458,7 @@ export class GraphVisaulizerComponent implements OnInit {
   }
    
   getproducts(){
-    this.httpClient.get("http://localhost:3000/getListe")
+    this.httpClient.get("http://35.225.20.174:3000/getListe")
     .subscribe(data =>{
       console.log("dataproduits",data);
       
@@ -467,7 +467,7 @@ export class GraphVisaulizerComponent implements OnInit {
 
   }
   getAll(){
-    this.httpClient.get("http://localhost:3000/getallproducts")
+    this.httpClient.get("http://35.225.20.174:3000/getallproducts")
     .subscribe(data =>{
       console.log("alllproduits",data);
       
@@ -507,7 +507,7 @@ let newNode: Node ;
 this.RunChangeDetector();
   }
   poistion(){
-    this.httpClient.get("http://localhost:3000/getposition")
+    this.httpClient.get("http://35.225.20.174:3000/getposition")
     .subscribe(data =>{
       
       console.log(data);
