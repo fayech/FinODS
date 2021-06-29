@@ -7,7 +7,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class BarcodeService {
-  endpoint = 'http://localhost:3000/';
+  endpoint = 'http://35.225.20.174:3000/';
 
   constructor(public fireservices:AngularFirestore,
     private http: HttpClient) { }

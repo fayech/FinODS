@@ -33,6 +33,7 @@ modalid:any;
   ngOnInit() {
   console.log("bonjour");
       this.crudservice.get_AllBarcode().subscribe(data => {
+        
   console.log("datafirebase"+data);
         this.scan = data.map(e => {
           console.log("codebar"+e);
