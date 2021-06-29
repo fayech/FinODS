@@ -1,0 +1,25 @@
+.container{
+	justify-content: center;
+    /* padding: 0px 10px; */
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    /* justify-content: flex-end; */
+    /* align-items: center; */
+
+}
+
+.action{
+	background-color: #137547;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    margin: auto 20px;
+    width: 120px;
+    text-align: center;
+    cursor: pointer;
+    
+    width: auto;
+}
+

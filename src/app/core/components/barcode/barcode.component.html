@@ -1,0 +1,75 @@
+<nav class="navbar navbar-dark">
+    Interview Crackers
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center p-2">
+            <h1>Angular 9 with Firebase crud app</h1>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="idClient" placeholder="Enter  idclient">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" [(ngModel)]="barcode" placeholder="Enter barcode">
+        </div>
+     
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="CreateRecord()" [disabled]="!idClient || !barcode ">Create barcode scanner</button>
+        </div>
+        <div class="form-group">
+            <h4><b>{{message}}</b></h4>
+        </div>
+    
+        <div class="row p-2">
+            <div class="col-md-12 p-2 justify-content-center">
+                <h4>All Employee Data</h4>
+            </div>
+            <p>{{scan.length}}</p>
+            <div class="col-md-3" *ngFor ="let item of scan ">
+          
+                <div class="card" *ngIf="!item.isedit; else elseBlock">
+                    <div class="card-body">
+                        <div class="card-title">
+                            idClient: {{item.idClient}}
+                        </div>
+                        <div class="card-subtitle">
+                            barcode: {{item.barcode}}
+                        </div>
+                      
+                        <span>
+                            <a  (click)="EditRecord(item)" class="btn btn-primary btn-xs">Edit barcode</a>
+                            <a   (click)="DeleteBarcode(item)" class="btn btn-danger btn-xs">Delete barcode</a>
+                        </span>
+                    </div>
+                </div>
+    
+                <ng-template #elseBlock>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text" [(ngModel)]="item.barcode" class="form-control">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="number" [(ngModel)]="item.idClient" class="form-control">
+                                    </div>
+                                   
+                                </div>
+                            </div>
+    
+                            <a  class="btn btn-danger btn-xs" (click)="item.isedit = false">Cancel</a>
+                            <a  class="btn btn-primary btn-xs" (click)="Updatarecord(item)">Update Employee</a>
+                       
+                        </div>
+                    </div>
+                </ng-template>
+    
+    
+    
+            </div>
+        </div>
+    
+    
+    </div>

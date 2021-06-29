@@ -1,0 +1,115 @@
+.node{
+  display: inline-block;
+  border-radius: 6px;
+  
+  /*margin: 2px;
+  */
+  content: "";
+  border : 1px solid #afc3c2;
+ 
+
+}
+
+
+// .isVisited{
+//     background-color: lightcoral;
+// }
+
+
+
+.isWall{
+  background-color: #a5a3a3;
+}
+
+
+
+.isVisited {
+  animation-name: visitedAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.1;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  // animation-fill-mode: forwards;
+  // animation-play-state: running;
+  background-color: rgba(0, 190, 218, 0.75);
+}
+
+@keyframes visitedAnimation {
+  0% {
+    // transform: scale(0.5);
+    background-color: rgba(164, 8, 255, 0.75);
+    border-radius: 100%;
+    // opacity: 0;
+
+  }
+
+  // 50% {
+  //   background-color: rgba(17, 104, 217, 0.75);
+  // }
+
+  // 75% {
+  //   // transform: scale(1);
+  //   background-color: rgba(0, 190, 211, 1);
+  // }
+
+  100% {
+    // transform: scale(1);
+    
+    background-color: rgba(0, 190, 218, 0.75);
+    border-radius: 0;
+  }
+}
+
+.inPath{
+  background-color: yellow !important;
+}
+.pattes{
+background-color:red ;
+}
+.okc{
+background-color:purple ;
+}
+.utah{
+background-color:orange ;
+}
+.chicago{
+background-color:blue ;
+}
+.miami{
+background-color:darkcyan ;
+}
+.toronto{
+background-color:green ;
+}
+.seattle{
+background-color:goldenrod ;
+}
+.portland{
+background-color:orange ;
+}
+.ny{
+background-color:crimson ;
+}
+.hou{
+background-color:rosybrown ;
+}
+.lac{
+background-color:white ;
+}
+.lal{
+background-color:tomato ;
+}
+.brooklyn{
+background-color:aquamarine ;
+}
+.indiana{
+background-color:burlywood ;
+}
+.no{
+background-color:lawngreen ;
+}
+.full{
+width : 100%;
+height: 100%;
+}

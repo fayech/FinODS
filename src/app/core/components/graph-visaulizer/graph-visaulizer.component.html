@@ -1,0 +1,184 @@
+<gv-navbar></gv-navbar>
+
+<div class="main-content-wrap d-flex flex-column sidenav-open">
+    <!-- ============ Body content start ============= -->
+    <div class="main-content">
+    
+       
+        <div class="row">
+            <!-- ICON BG-->
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                    <div class="card-body text-center"><i class="i-Add-User"></i>
+                        <div class="content">
+                            <p class="text-muted mt-2 mb-0">Produits achetés</p>
+                            <p class="text-primary text-24 line-height-1 mb-2">205</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                    <div class="card-body text-center"><i class="i-Checkout-Basket"></i>
+                        <div class="content">
+                            <p class="text-muted mt-2 mb-0">Points fidelité</p>
+                            <p class="text-primary text-24 line-height-1 mb-2">80</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
+                    <div class="card-body text-center"><i class="i-Financial"></i>
+                        <div class="content">
+                            <p class="text-muted mt-2 mb-0">Total</p>
+                            <p class="text-primary text-24 line-height-1 mb-2">{{somme}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+         
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="btn-localisation">
+                            <gv-actions [actions] = "actions" (taken)="ActionTakenHandler($event)" style="background-color: #DE2A5B;
+                            color: #ffff;">
+                            </gv-actions>
+                     
+                        <div class="info">
+                            <div class="detail">
+                                <div class="node isStartNode"></div>
+                                <div class="text">position actuelle</div>
+                            </div>
+                            <div class="detail">
+                                <div class="node isEndNode"></div>
+                                <div class="text">destination</div>
+                            </div>
+                            <!---
+                            <div class="detail">
+                                <div class="node "></div>
+                                <div class="text">Creates a Wall (click and drag on cells) </div>
+                            </div>
+                            <div class="detail">
+                                <div class="node isVisited"></div>
+                                <div class="text">Discovered Nodes</div>
+                            </div>
+                            <div class="detail">
+                                <div class="node inPath"></div>
+                                <div class="text">Shortest Path </div>
+                            </div>
+                            -->
+                        </div> 
+                      
+                    
+                        <div class="wrapper"  >
+                            <div *ngFor="let r of [].constructor(rows);let rn = index;" class="row">
+                                <div *ngFor = "let c of [].constructor(cols);let cn= index" class="col" >
+                                    <gv-node #node [node]="nodes[rn][cn]"   ></gv-node>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                      <!--- end-map--->
+                      <!--- end-of-map--->
+
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="ul-widget__head">
+                            <div class="ul-widget__head-label">
+
+                                <button id="produit" class="btn btn-xl m-1 active1 " type="button" style="
+                                background-color: #ffff;
+                                color:#137547;
+                                " onclick="$('#produit').addClass('active1');  $('#list').removeClass('active1'); document.getElementById('products').style.cssText += 'display:block !important;'; document.getElementById('lists').style.cssText += 'display:none !important;'">Produits</button>
+
+<button id="list" class="btn btn-xl m-1" type="button" style="
+background-color: #ffff;
+color:#137547;" onclick="$('#list').addClass('active1');  $('#produit').removeClass('active1'); document.getElementById('lists').style.cssText += 'display:block !important;'; document.getElementById('products').style.cssText += 'display:none !important;';">List</button>
+                            </div>
+                          
+                        </div>
+                        <div class="ul-widget__body" style="background-color: #eee;
+                        height: 70vh;
+                        border: 1px dotted black;
+                        overflow-y: scroll;
+                        border-radius: 23px;">
+                            <div id="lists" style="display: none;" class="tab-content">
+                                <div class="tab-pane active show" id="ul-widget5-tab1-content">
+                                    <div class="ul-widget5__item" *ngFor="let item of items; let i = index" style="border-style: solid;
+                                    border-color: #137547;">
+                                        <div class="ul-widget5__content">
+                                            <div class="ul-widget5__pic"><img src="http://localhost:3000/{{item.image}}"  alt="Third slide"></div>
+                                            <div class="ul-widget5__section"><a class="ul-widget4__title" href="#">{{ item.nom }}</a>
+                                               <!---- <div class="ul-widget5__info"><span class="text-primary">Promotion !</span><span>Released:</span><span class="text-primary">23.08.17</span></div> -->
+                                            </div>
+                                        </div>
+                                        <div class="ul-widget5__content">
+                                            <div class="ul-widget5__stats"><span class="ul-widget5__number">Prix </span><span class="ul-widget5__number">{{ item.price }}DNT </span>
+                                                <a class="Danger" (click)="getpostion(item.x,item.y)" >
+
+                                                    <img src="./assets/dist-assets/images/near1.png" style="/* margin-right: 27px; */width: 36px;margin-left: 26px;/* margin-right: 16px; *//* margin-left: 36px; */" >                                                   
+                                                  </a>         </div>
+
+                                            
+                                            </div>
+                                    </div>
+                                  
+                                      
+                                    </div>
+                                </div>
+                             
+
+
+
+
+
+
+                                <div id="products" class="tab-content">
+                                    <div class="tab-pane active show" id="ul-widget5-tab1-content" >
+                                        <div class="ul-widget5__item" *ngFor="let item of products; let i = index" style="border-style: solid;
+                                        border-color: #137547;">
+                                            <div class="ul-widget5__content">
+                                                <div class="ul-widget5__pic"><img src="http://localhost:3000/{{item.image}}"  alt="Third slide"></div>
+                                                <div class="ul-widget5__section"><a class="ul-widget4__title" href="#">{{ item.nom }}</a>
+                                                   <!---- <div class="ul-widget5__info"><span class="text-primary">Promotion !</span><span>Released:</span><span class="text-primary">23.08.17</span></div> -->
+                                                </div>
+                                            </div>
+                                            <div class="ul-widget5__content">
+                                                <div class="ul-widget5__stats"><span class="ul-widget5__number">Prix: </span><span class="ul-widget5__sales text-mute">{{ item.price }}DNT</span>
+                                                    <a class="Danger" (click)="getpostion(item.x,item.y)" >
+    
+                                                        <img src="./assets/dist-assets/images/near1.png" style="/* margin-right: 27px; */width: 36px;margin-left: 26px;/* margin-right: 16px; *//* margin-left: 36px; */" >                                                   
+                                                      </a>         </div>
+    
+                                                
+                                                </div>
+                                        </div>
+                                      
+                                          
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+
+
+
+
+    </div>
+
+

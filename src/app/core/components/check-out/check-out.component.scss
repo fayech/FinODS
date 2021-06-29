@@ -1,0 +1,40 @@
+.cart_inner .table tbody tr td .product_count input {
+    width: 100px;
+    padding-left: 30px;
+    height: 40px;
+    outline: none;
+    box-shadow: none;
+}
+
+.product_count input {
+    width: 76px;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    padding-left: 10px;
+}
+.product_count button {
+    display: block;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    font-size: 14px;
+    color: #cccccc;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.lnr {
+    font-family: 'Linearicons-Free';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
