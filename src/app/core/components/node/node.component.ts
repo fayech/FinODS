@@ -59,7 +59,7 @@ export class NodeComponent implements OnInit, OnChanges {
   runChangeDetector() {
     this.ref.markForCheck();
   }
-/*
+
   MouseUp(event: Event) {
     console.log(event);
     try {
@@ -95,7 +95,7 @@ export class NodeComponent implements OnInit, OnChanges {
       this.node.isWall = !this.node.isWall;
     }
   }
-*/
+
   DragCancel(event: Event) {
     event.preventDefault();
   }
