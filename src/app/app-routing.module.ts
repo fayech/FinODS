@@ -19,6 +19,11 @@ const routes: Routes = [
     path:'barcode',
     component:BarcodeComponent
   },
+  
+  {
+    path:'',
+ component:GraphVisaulizerComponent
+  },
   {
     path:'checkout',
     component:CheckOutComponent
